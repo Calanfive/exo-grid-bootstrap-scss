@@ -1,41 +1,49 @@
 @use "mixins" as *;
 @use "variables" as *;
+@use "sass:math";
 
 .blue {
   background-color: blue;
 }
-
 .orange {
   background-color: rgb(255, 176, 40);
 }
-
 .purple {
   background-color: purple;
 }
-
 .red {
   background-color: rgba(241, 18, 18, 0.827);
 }
 
-// .up {
-
-// }
-
-// .middle {
+.container {
+  display: flex;
+  flex-direction: column;
   
-// }
+  .row { 
+    @include row(flex, row, wrap);
+    
+    @media (min-width: 0px) {
+      @for $i from 1 through 12 {
+        .col-xs-#{$i} {
+          width: 100%;
+        }
+      }
+    }
 
-// .down {
-  
-// }
+    @media (min-width: 768px) {
+      @for $i from 1 through 12 {
+        .col-md-#{$i} {
+          width: math.div($i,12) * 100%;
+        }
+      }
+    }
 
-// .col-xs-8 {
-//   width: 50%;
-//   max-width: 50%;
-// }
-
-// .col-sm-8 {
-//   width: 25%;
-//   max-width: 25%;
-// }
-
+    @media (min-width: 992px) {
+      @for $i from 1 through 12 {
+        .col-lg-#{$i} {
+          width: math.div($i,12) * 100%;
+        }
+      }
+    }
+  }
+}
