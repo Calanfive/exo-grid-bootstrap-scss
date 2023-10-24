@@ -1,1 +1,41 @@
+@use "mixins" as *;
+@use "variables" as *;
+
+.blue {
+  background-color: blue;
+}
+
+.orange {
+  background-color: rgb(255, 176, 40);
+}
+
+.purple {
+  background-color: purple;
+}
+
+.red {
+  background-color: rgba(241, 18, 18, 0.827);
+}
+
+// .up {
+
+// }
+
+// .middle {
+  
+// }
+
+// .down {
+  
+// }
+
+// .col-xs-8 {
+//   width: 50%;
+//   max-width: 50%;
+// }
+
+// .col-sm-8 {
+//   width: 25%;
+//   max-width: 25%;
+// }
 
